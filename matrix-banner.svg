@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050807" />
+      <stop offset="50%" stop-color="#09120E" />
+      <stop offset="100%" stop-color="#050807" />
+    </linearGradient>
+
+    <!-- Neon Accent Gradient -->
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#193B28" stop-opacity="0.2" />
+      <stop offset="20%" stop-color="#39FF14" />
+      <stop offset="50%" stop-color="#00FF9C" />
+      <stop offset="80%" stop-color="#39FF14" />
+      <stop offset="100%" stop-color="#193B28" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur1" />
+      <feGaussianBlur stdDeviation="10" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Scanline Texture -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#00FF9C" stroke-width="1" stroke-opacity="0.035" />
+    </pattern>
+
+    <!-- Cyber Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#193B28" stroke-width="0.8" stroke-opacity="0.45" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    .glitch-title {
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      fill: #FFFFFF;
+    }
+    .neon-sub {
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      fill: #00FF9C;
+    }
+    .prompt-text {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      fill: #39FF14;
+    }
+    .meta-text {
+      font-size: 13.5px;
+      letter-spacing: 0.22em;
+      fill: #8AA596;
+    }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .blinking-cursor {
+      animation: cursorBlink 1s infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1500" height="500" fill="url(#bgGradient)" />
+
+  <!-- Cyber Grid -->
+  <rect width="1500" height="500" fill="url(#cyberGrid)" />
+
+  <!-- Matrix Rain Streams (Background Code Columns) -->
+  <g class="font-mono" font-size="14.5" fill="#00FF9C" opacity="0.30">
+    <!-- Left Streams -->
+    <text x="70" y="45">0</text><text x="70" y="70">1</text><text x="70" y="95">1</text><text x="70" y="120">0</text>
+    <text x="70" y="145" fill="#39FF14" opacity="0.85">1</text><text x="70" y="170" fill="#FFFFFF">0</text>
+
+    <text x="140" y="175">x</text><text x="140" y="200">8</text><text x="140" y="225">6</text><text x="140" y="250">_</text>
+    <text x="140" y="275">6</text><text x="140" y="300" fill="#39FF14">4</text>
+
+    <text x="230" y="65">A</text><text x="230" y="90">I</text><text x="230" y="115">/</text><text x="230" y="140">M</text>
+    <text x="230" y="165">L</text><text x="230" y="190" fill="#FFFFFF">9</text>
+
+    <text x="330" y="305">0</text><text x="330" y="330">x</text><text x="330" y="355">F</text><text x="330" y="380">F</text>
+    <text x="330" y="405" fill="#39FF14">1</text><text x="330" y="430" fill="#FFFFFF">4</text>
+
+    <text x="440" y="55">R</text><text x="440" y="80">A</text><text x="440" y="105">G</text><text x="440" y="130">_</text>
+    <text x="440" y="155">V</text><text x="440" y="180" fill="#39FF14">1</text>
+
+    <!-- Right Streams -->
+    <text x="1060" y="75">P</text><text x="1060" y="100">R</text><text x="1060" y="125">O</text><text x="1060" y="150">M</text>
+    <text x="1060" y="175">P</text><text x="1060" y="200" fill="#39FF14">T</text>
+
+    <text x="1170" y="285">G</text><text x="1170" y="310">E</text><text x="1170" y="335">N</text><text x="1170" y="360">_</text>
+    <text x="1170" y="385">A</text><text x="1170" y="410" fill="#FFFFFF">I</text>
+
+    <text x="1275" y="65">1</text><text x="1275" y="90">0</text><text x="1275" y="115">1</text><text x="1275" y="140">1</text>
+    <text x="1275" y="165">0</text><text x="1275" y="190" fill="#39FF14">1</text><text x="1275" y="215" fill="#FFFFFF">0</text>
+
+    <text x="1375" y="185">R</text><text x="1375" y="210">W</text><text x="1375" y="235">_</text><text x="1375" y="260">O</text>
+    <text x="1375" y="285">P</text><text x="1375" y="310" fill="#39FF14">S</text>
+
+    <text x="1435" y="85">0</text><text x="1435" y="110">1</text><text x="1435" y="135">0</text><text x="1435" y="160" fill="#39FF14">1</text>
+  </g>
+
+  <!-- Circuit Traces Left -->
+  <g stroke="#193B28" stroke-width="1.8" fill="none" opacity="0.85">
+    <path d="M 30 180 H 160 L 220 240 H 340 L 370 270" />
+    <path d="M 30 320 H 120 L 180 260 H 280 L 320 220 H 380" />
+    <path d="M 220 30 V 90 L 260 130 V 220" />
+    <!-- Glowing Nodes -->
+    <circle cx="160" cy="180" r="3.5" fill="#00FF9C" filter="url(#neonGlow)" />
+    <circle cx="340" cy="240" r="3.5" fill="#39FF14" filter="url(#neonGlow)" />
+    <circle cx="180" cy="260" r="3" fill="#00FF9C" />
+    <circle cx="260" cy="130" r="3.5" fill="#39FF14" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Circuit Traces Right -->
+  <g stroke="#193B28" stroke-width="1.8" fill="none" opacity="0.85">
+    <path d="M 1470 180 H 1340 L 1280 240 H 1160 L 1130 270" />
+    <path d="M 1470 320 H 1380 L 1320 260 H 1220 L 1180 220 H 1120" />
+    <path d="M 1280 470 V 410 L 1240 370 V 280" />
+    <!-- Glowing Nodes -->
+    <circle cx="1340" cy="180" r="3.5" fill="#00FF9C" filter="url(#neonGlow)" />
+    <circle cx="1160" cy="240" r="3.5" fill="#39FF14" filter="url(#neonGlow)" />
+    <circle cx="1320" cy="260" r="3" fill="#00FF9C" />
+    <circle cx="1240" cy="370" r="3.5" fill="#39FF14" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Outer Cybernetic Border -->
+  <rect x="25" y="25" width="1450" height="450" rx="8" fill="none" stroke="#193B28" stroke-width="1.5" />
+  <rect x="35" y="35" width="1430" height="430" rx="6" fill="none" stroke="#00FF9C" stroke-width="0.75" stroke-opacity="0.3" />
+
+  <!-- Corner Brackets (Glowing Neon Green) -->
+  <path d="M 25 75 V 33 C 25 28.5 28.5 25 33 25 H 75" fill="none" stroke="#39FF14" stroke-width="3.5" filter="url(#neonGlow)" />
+  <path d="M 1425 25 H 1467 C 1471.5 25 1475 28.5 1475 33 V 75" fill="none" stroke="#39FF14" stroke-width="3.5" filter="url(#neonGlow)" />
+  <path d="M 25 425 V 467 C 25 471.5 28.5 475 33 475 H 75" fill="none" stroke="#39FF14" stroke-width="3.5" filter="url(#neonGlow)" />
+  <path d="M 1425 475 H 1467 C 1471.5 475 1475 471.5 1475 467 V 425" fill="none" stroke="#39FF14" stroke-width="3.5" filter="url(#neonGlow)" />
+
+  <!-- Ambient Glow Behind Central Text -->
+  <ellipse cx="750" cy="255" rx="440" ry="140" fill="#00FF9C" opacity="0.07" filter="url(#textGlow)" />
+
+  <!-- Terminal Window Bar Header -->
+  <g class="font-mono">
+    <!-- Window controls -->
+    <circle cx="65" cy="55" r="5" fill="#FF5F56" opacity="0.85" />
+    <circle cx="85" cy="55" r="5" fill="#FFBD2E" opacity="0.85" />
+    <circle cx="105" cy="55" r="5" fill="#27C93F" opacity="0.85" />
+    <!-- Terminal Title -->
+    <text x="130" y="60" class="meta-text" fill="#8AA596">bash — 1500x500 — retheeshworld@matrix_core:~$</text>
+  </g>
+
+  <!-- Center Content -->
+  <g class="font-mono" text-anchor="middle">
+    <!-- Prompt Line -->
+    <g transform="translate(750, 150)">
+      <text x="-14" y="0" font-size="23" class="prompt-text">
+        root@retheeshworld:~$ <tspan fill="#E5F5E9">./initiate_profile.sh</tspan>
+      </text>
+      <rect x="235" y="-19" width="13" height="23" fill="#39FF14" class="blinking-cursor" filter="url(#neonGlow)" />
+    </g>
+
+    <!-- Main Developer Name Title -->
+    <text x="750" y="255" font-size="80" class="glitch-title font-mono" filter="url(#textGlow)">
+      RETHEESH R
+    </text>
+
+    <!-- Divider Neon Accent Line -->
+    <line x1="400" y1="285" x2="1100" y2="285" stroke="url(#neonGradient)" stroke-width="2.5" filter="url(#neonGlow)" />
+    <polygon points="750,281 756,285 750,289 744,285" fill="#39FF14" filter="url(#neonGlow)" />
+
+    <!-- Subtitle Track -->
+    <text x="750" y="335" font-size="25" class="neon-sub font-mono">
+      AI/ML  •  GENAI  •  WEB DEVELOPMENT
+    </text>
+
+    <!-- Mission Motto -->
+    <text x="750" y="385" font-size="16.5" letter-spacing="0.20em" fill="#E5F5E9" opacity="0.95" class="font-mono">
+      &lt;BUILDING INTELLIGENT SYSTEMS // ENGINEERING DIGITAL EXPERIENCES&gt;
+    </text>
+  </g>
+
+  <!-- Footer Telemetry Bar -->
+  <g class="font-mono">
+    <text x="65" y="445" class="meta-text">
+      <tspan fill="#39FF14">●</tspan> SYS_STATUS: OPERATIONAL
+    </text>
+    <text x="750" y="445" class="meta-text" text-anchor="middle">
+      VENTURE: RW SOFTWARE SOLUTIONS
+    </text>
+    <text x="1435" y="445" class="meta-text" text-anchor="end">
+      ACADEMIA: RATHINAM UNIVERSITY [AI &amp; ML]
+    </text>
+  </g>
+
+  <!-- Scanline Screen Effect Overlay -->
+  <rect width="1500" height="500" fill="url(#scanlines)" pointer-events="none" />
+</svg>

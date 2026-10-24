@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 24" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#193B28" stop-opacity="0" />
+      <stop offset="15%" stop-color="#193B28" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#00FF9C" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#39FF14" stop-opacity="1" />
+      <stop offset="65%" stop-color="#00FF9C" stop-opacity="0.9" />
+      <stop offset="85%" stop-color="#193B28" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#193B28" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="divGlow" x="-20%" y="-100%" width="140%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base scanline / circuit rail -->
+  <line x1="20" y1="12" x2="880" y2="12" stroke="url(#divGrad)" stroke-width="1.5" />
+
+  <!-- Center Diamond & Circuit Nodes -->
+  <g filter="url(#divGlow)">
+    <!-- Circuit dashes -->
+    <line x1="380" y1="12" x2="420" y2="12" stroke="#00FF9C" stroke-width="2.5" />
+    <line x1="480" y1="12" x2="520" y2="12" stroke="#00FF9C" stroke-width="2.5" />
+
+    <!-- Outer Nodes -->
+    <circle cx="360" cy="12" r="2.5" fill="#39FF14" />
+    <circle cx="540" cy="12" r="2.5" fill="#39FF14" />
+
+    <!-- Center Accent Diamond -->
+    <polygon points="450,4 458,12 450,20 442,12" fill="#050807" stroke="#39FF14" stroke-width="2" />
+    <polygon points="450,8 454,12 450,16 446,12" fill="#00FF9C" />
+  </g>
+</svg>
